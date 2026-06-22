@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: black --default;
+}
+
+:root {
+  /* --color-primary: #F04248; */
+  --color-primary: #13FFAA;
+  --color-primary-content: #020617;
+
+  --color-secondary: #020617;
+  --color-secondary-content: #13FFAA;
+
+  --color-accent: #13AAFF;
+
+  --color-test-1: #AA13FF;
+  --color-test-2: #AAFF13;
+  --color-test-3: #FFAA13;
+  --color-test-4: #FF13AA;
+
+  --color-background: #020617;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.shadow-custom {
+  box-shadow: rgba(255, 0, 0, 0.305) 0px 10px 36px 0px, rgba(0, 0, 0, 0.737) 0px 0px 0px 1px;
+}
+
+.card {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.card::after {
+  content: '';
+  width: 200px;
+  height: 400px;
+  border: 3px solid #13FFAA;
+  border-left: 0;
+  outline: 0;
+  border-radius: 0 12px 12px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* box-shadow: 0px 4px 24px #13FFAA; */
+}
+
+.card::before {
+  content: '';
+  width: 200px;
+  height: 400px;
+  border: 3px solid #13FFAA;
+  border-right: 0;
+  border-radius:  12px 0 0 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* box-shadow: 0px 4px 24px #13FFAA; */
+}

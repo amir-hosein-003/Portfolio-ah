@@ -1,0 +1,37 @@
+{
+  "heroSection": {
+    "title": "Hi! I'm Amir Hosein Kanani",
+    "about": "I am a full-stack developer specializing in Next.js, Nest.js, and React. I am passionate about building modern, fast, and scalable web applications and am always eager to learn new and challenging technologies.",
+    "skillsBtn": "My skills",
+    "contactBtn": "Contact me"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "",
+    "p2": "",
+    "p3": "",
+    "location": "Ardebil, Iran"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "projects": {
+    "title": "My Projects"
+  },
+  "contact": {
+    "title": "Contact me",
+    "subTitle": "Test text for subTitle",
+    "namePlaceholder": "enter your name",
+    "emailPlaceholder": "example@domain.com",
+    "subjectPlaceholder": "e.g. Get in touch, Questions, Feedback",
+    "messagePlaceholder": "message",
+    "submitBtn": "Submit"
+  }
+}
