@@ -14,20 +14,23 @@
   },
   "about": {
     "title": "About me",
+    "subTitle": "Get To Know Me Better",
     "p1": "",
     "p2": "",
     "p3": "",
     "location": "Ardebil, Iran"
   },
   "skills": {
-    "title": "My Skills"
+    "title": "My Skills",
+    "subTitle": "All these skills have been developed through years of hands-on experience."
   },
   "projects": {
-    "title": "My Projects"
+    "title": "My Projects",
+    "subTitle": "You can see some of my projects I have done in the past."
   },
   "contact": {
     "title": "Contact me",
-    "subTitle": "Test text for subTitle",
+    "subTitle": "I'm always open to new opportunities and discussions.",
     "namePlaceholder": "enter your name",
     "emailPlaceholder": "example@domain.com",
     "subjectPlaceholder": "e.g. Get in touch, Questions, Feedback",

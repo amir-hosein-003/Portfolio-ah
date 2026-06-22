@@ -1,7 +1,10 @@
 "use client";
 
-import { newSkills } from "@/lib/skills";
 import { useTranslations } from "next-intl";
+
+import { skills } from "@/lib/skills";
+
+import SkillCard from "./SkillCard";
 
 const SkillsSection = () => {
   const t = useTranslations("skills");
@@ -11,33 +14,15 @@ const SkillsSection = () => {
       <h3 id="skills" className="text-4xl text-center font-bold">
         {t("title")}
       </h3>
-      <div className="grid grid-cols-2 gap-16 mt-6" dir="ltr">
-        <div className="w-full mt-8">
-          <h3 className="text-2xl font-semibold border-b border-b-primary pb-4 my-6">
-            FrontEnd
-          </h3>
-          <div className="grid grid-cols-2 gap-x-16 py-2">
-            {newSkills.frontEnd.map(({ id, skill }) => (
-              <div key={id} className="flex flex-row items-center gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <p className="text-xl text-primary">{skill}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="w-full mt-8">
-          <h3 className="text-2xl font-semibold border-b border-b-primary pb-4 my-6">
-            BackEnd
-          </h3>
-          <div className="grid grid-cols-2 gap-x-16 py-2">
-            {newSkills.backEnd.map(({ id, skill }) => (
-              <div key={id} className="flex flex-row items-center gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <p className="text-xl text-primary">{skill}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <p className="text-center text-base-content/70 mt-4">{t("subTitle")}</p>
+
+      <div
+        dir="ltr"
+        className="mt-8 md:mt-16 grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+      >
+        {skills.map((skill, index) => (
+          <SkillCard {...skill} key={index} />
+        ))}
       </div>
     </section>
   );

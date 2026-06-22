@@ -17,8 +17,8 @@ const Navbar = () => {
       className="absolute w-full flex flex-row items-center justify-between bg-transparent p-0 mt-4 z-50"
     >
       <div
-        className={`w-xl flex flex-row items-center justify-around shadow-[0px_4px_24px_#13FFAA] ${
-          locale === "fa" ? "rounded-l-full" : "rounded-r-full"
+        className={`w-xl flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] ${
+          locale === "fa" ? "rounded-l-full border-r-0" : "rounded-r-full border-l-0"
         } bg-[#020617] p-4`}
       >
         <NavLink href="#hero">{t("home")}</NavLink>
@@ -30,9 +30,9 @@ const Navbar = () => {
       <div
         className={`w-32 min-h-14 ${
           locale === "fa"
-            ? "-translate-x-20 hover:translate-x-0 rounded-r-full"
-            : "translate-x-20 hover:-translate-x-0 rounded-l-full"
-        } transition-all relative flex flex-row items-center justify-around shadow-[0px_4px_24px_#13FFAA] bg-secondary p-4`}
+            ? "-translate-x-20 hover:translate-x-0 rounded-r-full border-l-0"
+            : "translate-x-20 hover:-translate-x-0 rounded-l-full border-r-0"
+        } transition-all relative flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] bg-secondary p-4`}
       >
         <Icon
           icon="mynaui:cog-one"
@@ -53,12 +53,12 @@ const Navbar = () => {
           >
             {locale === "fa" ? "EN" : "FA"}
           </button>
-          <Icon
+          {/* <Icon
             icon="mynaui:sun-medium"
             className="text-primary cursor-pointer"
             width="24"
             height="24"
-          />
+          /> */}
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify-icon/react": "^3.0.3",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.0",
     "daisyui": "^5.0.43",
