@@ -10,8 +10,8 @@ const SkillsSection = () => {
   const t = useTranslations("skills");
 
   return (
-    <section className="h-screen py-16 px-32">
-      <h3 id="skills" className="text-4xl text-center font-bold">
+    <section id="skills" className="h-screen py-16 px-32">
+      <h3 className="text-4xl text-center font-bold">
         {t("title")}
       </h3>
       <p className="text-center text-base-content/70 mt-4">{t("subTitle")}</p>

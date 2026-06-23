@@ -3,12 +3,14 @@ import Image from "next/image";
 
 import { ProjectInterface } from "@/lib/projects";
 
-// import TalkButton from "./TalkButton";
-
 const ProjectCard = (props: ProjectInterface) => {
   return (
-    <div className="from-base-200 to-primary/20 project-card grid grid-cols-1 gap-4 overflow-hidden rounded-3xl bg-linear-to-r lg:grid-cols-2">
-      <div className="order-2 flex flex-col px-4 py-4 md:py-16 md:pl-32 lg:order-1">
+    <div
+      className={`from-base-200 to-primary/20 grid grid-cols-1 gap-4 overflow-hidden rounded-3xl bg-linear-to-r ${props.image ? "lg:grid-cols-2" : "lg:grid-cols-1"}`}
+    >
+      <div
+        className={`order-2 flex flex-col px-4 py-4 md:py-16 lg:order-1 ${props.image ? "md:pl-16" : "md:px-16"}`}
+      >
         <div className="text-primary flex flex-row items-center gap-4 text-sm font-semibold">
           <span>{props.company}</span>
           <div className="bg-primary h-1 w-1 rounded-full"></div>
@@ -33,16 +35,17 @@ const ProjectCard = (props: ProjectInterface) => {
             </div>
           ))}
         </div>
-        {/* <TalkButton className="mt-8 w-full md:w-max" /> */}
       </div>
       <div className="relative order-1 flex w-full items-center justify-center lg:order-2">
-        <Image
-          height={1000}
-          width={1800}
-          src={props.image}
-          alt={props.title}
-          className="m-0 w-full rounded-b-none object-cover lg:-mr-36 lg:-mb-36 lg:rounded-3xl"
-        />
+        {props.image && (
+          <Image
+            height={1000}
+            width={1800}
+            src={props.image}
+            alt={props.title}
+            className="m-0 w-full rounded-b-none object-cover lg:-mr-36 lg:-mb-36 lg:rounded-3xl"
+          />
+        )}
       </div>
     </div>
   );

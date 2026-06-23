@@ -15,9 +15,7 @@
   "about": {
     "title": "About me",
     "subTitle": "Get To Know Me Better",
-    "p1": "",
-    "p2": "",
-    "p3": "",
+    "description": "Hi, I'm Amirhosein Kanani. a passionate Full-Stack Developer who loves building creative, user-focused digital experiences. I specialize in modern web and mobile technologies like React, React Native, Next.js, and NestJS, and I enjoy turning complex problems into elegant, efficient solutions. With over 2 years of experience in both front-end and back-end development, I'm always looking to learn new tools, contribute to meaningful projects, and grow as a developer. When I'm not coding, you might find me exploring new technologies, working on side projects, or learning something new.",
     "location": "Ardebil, Iran"
   },
   "skills": {
