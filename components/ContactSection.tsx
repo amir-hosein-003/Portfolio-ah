@@ -1,8 +1,8 @@
 "use client";
 
+import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
-import React, { useState } from "react";
 
 const ContactSection = () => {
   const [textLength, setTextLength] = useState<number>(0);

@@ -2,7 +2,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
-import Navbar from "@/components/home/Navbar";
+import Navbar from "@/components/Navbar";
 
 interface Props {
   children: React.ReactNode;

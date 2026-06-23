@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { projects } from "@/lib/projects";
-import ProjectCard from "@/components/home/ProjectCard"
+
+import ProjectCard from "./ProjectCard"
 
 const ProjectsSection = () => {
   const t = useTranslations("projects");

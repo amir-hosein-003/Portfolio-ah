@@ -1,52 +1,63 @@
 "use client";
 
-import NavLink from "@/components/NavLink";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import React, { useEffect } from "react";
-import {
-  useMotionTemplate,
-  useMotionValue,
-  motion,
-  animate,
-} from "framer-motion";
+import { useParams } from "next/navigation";
+import { redirect } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
-const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+import Icon from "./ui/Icon";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
-  const colors = useMotionValue(COLORS_TOP[0]);
+  const { locale } = useParams();
+  const t = useTranslations("navbar");
 
-  useEffect(() => {
-    animate(colors, COLORS_TOP, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "mirror",
-    });
-  }, []);
-
-  const border = useMotionTemplate`1px solid ${colors}`;
-  const boxShadow = useMotionTemplate`0px 4px 24px ${colors}`;
   return (
-    <nav className="absolute w-full h-16 flex flex-row items-center justify-center gap-16 px-32 z-50">
-      <motion.div
-        style={{ border, boxShadow }}
-        className="flex flex-row items-center justify-center gap-16 bg-transparent rounded-full px-16 py-2 my-2"
+    <section
+      dir={locale === "fa" ? "rtl" : "ltr"}
+      className="absolute w-full flex flex-row items-center justify-between bg-transparent p-0 mt-4 z-50"
+    >
+      <div
+        className={`w-xl flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] ${
+          locale === "fa"
+            ? "rounded-l-full border-r-0"
+            : "rounded-r-full border-l-0"
+        } bg-[#020617] p-4`}
       >
-        <NavLink href="#hero">خانه</NavLink>
-        <NavLink href="#about">‌درباره‌من</NavLink>
-        <NavLink href="#skills">تخصص‌ها</NavLink>
-        <NavLink href="#projects">پروژه‌ها</NavLink>
-        <NavLink href="#contact">تماس</NavLink>
-      </motion.div>
-      {/* <div className="flex items-center gap-8">
-              <p className="">مرا دنبال کنید...</p>
-        <div className="flex items-center gap-4 text-primary">
-          <Icon icon="garden:linkedin-stroke-12" width="23" height="23" />
-          <Icon icon="gg:instagram" width="25" height="25" />
-          <Icon icon="qlementine-icons:facebook-16" width="26" height="26" />
+        <NavLink href="#hero">{t("home")}</NavLink>
+        <NavLink href="#about">{t("about")}</NavLink>
+        <NavLink href="#skills">{t("skills")}</NavLink>
+        <NavLink href="#projects">{t("projects")}</NavLink>
+        <NavLink href="#contact">{t("contact")}</NavLink>
+      </div>
+      <div
+        className={`w-32 min-h-14 ${
+          locale === "fa"
+            ? "-translate-x-20 hover:translate-x-0 rounded-r-full border-l-0"
+            : "translate-x-20 hover:-translate-x-0 rounded-l-full border-r-0"
+        } transition-all relative flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] bg-secondary p-4`}
+      >
+        <Icon
+          icon="mynaui:cog-one"
+          className="absolute inset-3 text-primary cursor-pointer"
+          width="32"
+          height="32"
+        />
+        <div
+          className={`flex flex-row items-center justify-around w-full ${
+            locale === "fa" ? "mr-10" : "ml-10"
+          }`}
+        >
+          <button
+            onClick={() =>
+              redirect({ href: "/", locale: locale === "fa" ? "en" : "fa" })
+            }
+            className="text-primary cursor-pointer"
+          >
+            {locale === "fa" ? "EN" : "FA"}
+          </button>
         </div>
-      </div> */}
-    </nav>
+      </div>
+    </section>
   );
 };
 
