@@ -25,13 +25,15 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  
   return (
-    <html lang={params.locale === "fa" ? "fa" : "en"}>
+    <html lang={locale === "fa" ? "fa" : "en"}>
       <body
-        dir={params.locale === "fa" ? "rtl" : "ltr"}
-        className={`${params.locale === "fa" ? vazir.className : poppins.variable} overflow-x-hidden`}
+        dir={locale === "fa" ? "rtl" : "ltr"}
+        className={`${locale === "fa" ? vazir.className : poppins.variable} overflow-x-hidden`}
       >
         {children}
       </body>

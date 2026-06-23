@@ -38,23 +38,6 @@ const AboutSection = () => {
             </h3>
             <p className="text-base-content/70 mt-4">{t("subTitle")}</p>
             <p className="text-lg leading-relaxed text-base-content/70 mt-8">{t("description")}</p>
-            {/* <p className="text-xl text-base-content/80 mt-8">
-              سلام! من امیرحسین هستم، یک توسعه‌دهنده
-              <span className="font-bold text-primary"> فرانت‌اند </span> با بیش
-              از یک سال تجربه در یادگیری و فعالیت عملی در دنیای توسعه وب. تمرکز
-              اصلی من روی ساخت رابط‌های کاربری تمیز، واکنش‌گرا و کاربرپسند با
-              استفاده از React و Tailwind CSS هست.
-            </p>
-            <p className="text-xl text-base-content/80 mt-4">
-              برنامه‌نویسی برای من فقط یه مهارت نیست، یه علاقه واقعیه که مسیر
-              آینده‌م رو باهاش می‌سازم. همیشه دنبال یادگیری‌ام واز چالش‌های جدید
-              استقبال می‌کنم.
-            </p>
-            <p className="text-xl text-base-content/80 mt-4">
-              در حال حاضر دانشجوی مقطع کارشناسی رشته{" "}
-              <span className="font-bold text-primary">مهندسی کامپیوتر</span>{" "}
-              هستم.
-            </p> */}
             <div className="grid grid-cols-3 gap-8 font-bold mt-16">
               <div className="h-40 flex flex-col items-center justify-center gap-2 bg-base-200/20 border-2 border-[#71717120] rounded-md transition-transform hover:scale-[1.05] hover:bg-primary/5">
                 <Icon
