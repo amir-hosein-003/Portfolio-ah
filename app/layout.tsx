@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const vazir = localFont({
-  src: "../public/fonts/Vazir.ttf",
-  weight: "600",
-});
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,19 +18,15 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
-  
   return (
-    <html lang={locale === "fa" ? "fa" : "en"}>
+    <html lang={"en"} data-scroll-behavior="smooth">
       <body
-        dir={locale === "fa" ? "rtl" : "ltr"}
-        className={`${locale === "fa" ? vazir.className : poppins.variable} overflow-x-hidden`}
+        className={`${poppins.variable} overflow-x-hidden`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

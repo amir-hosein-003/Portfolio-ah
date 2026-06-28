@@ -1,62 +1,49 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { redirect } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 import Icon from "./ui/Icon";
-import NavLink from "./NavLink";
 
 const Navbar = () => {
-  const { locale } = useParams();
-  const t = useTranslations("navbar");
+  const links = [
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
+  ];
 
   return (
     <section
-      dir={locale === "fa" ? "rtl" : "ltr"}
-      className="absolute w-full flex flex-row items-center justify-between bg-transparent p-0 mt-4 z-50"
+      dir="ltr"
+      className="absolute w-full flex flex-row items-center justify-center bg-transparent p-0 mt-4 z-50"
     >
       <div
-        className={`w-xl flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] ${
-          locale === "fa"
-            ? "rounded-l-full border-r-0"
-            : "rounded-r-full border-l-0"
-        } bg-[#020617] p-4`}
+        className={`w-xl flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] rounded-full bg-[#020617] p-4`}
       >
-        <NavLink href="#hero">{t("home")}</NavLink>
-        <NavLink href="#about">{t("about")}</NavLink>
-        <NavLink href="#skills">{t("skills")}</NavLink>
-        <NavLink href="#projects">{t("projects")}</NavLink>
-        <NavLink href="#contact">{t("contact")}</NavLink>
+        {links.map((link) => (
+          <Link key={link.href} href={link.href} className="hover:text-primary">
+            {link.label}
+          </Link>
+        ))}
       </div>
-      <div
-        className={`w-32 min-h-14 ${
-          locale === "fa"
-            ? "-translate-x-20 hover:translate-x-0 rounded-r-full border-l-0"
-            : "translate-x-20 hover:-translate-x-0 rounded-l-full border-r-0"
-        } transition-all relative flex flex-row items-center justify-around border border-primary shadow-[0px_4px_24px_#13FFAA60] bg-secondary p-4`}
-      >
+      {/* <div className="flex flex-row items-center justify-around gap-4 border border-primary shadow-[0px_4px_24px_#13FFAA60] rounded-l-full border-r-0 bg-[#020617] p-4">
         <Icon
-          icon="mynaui:cog-one"
-          className="absolute inset-3 text-primary cursor-pointer"
-          width="32"
-          height="32"
+          icon="skill-icons:github-light"
+          className="bg-blend-saturation"
+          width={32}
+          height={32}
         />
-        <div
-          className={`flex flex-row items-center justify-around w-full ${
-            locale === "fa" ? "mr-10" : "ml-10"
-          }`}
-        >
-          <button
-            onClick={() =>
-              redirect({ href: "/", locale: locale === "fa" ? "en" : "fa" })
-            }
-            className="text-primary cursor-pointer"
-          >
-            {locale === "fa" ? "EN" : "FA"}
-          </button>
-        </div>
-      </div>
+        <Icon
+          icon="skill-icons:linkedin"
+          className="bg-blend-saturation"
+          width={32}
+          height={32}
+        />
+        <Icon
+          icon="logos:telegram"
+          className="bg-blend-saturation"
+          width={32}
+          height={32}
+        />
+      </div> */}
     </section>
   );
 };

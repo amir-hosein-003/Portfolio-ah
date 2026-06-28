@@ -1,63 +1,40 @@
-"use client";
-
-import React, { useState } from "react";
-import { useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
-
 const ContactSection = () => {
-  const [textLength, setTextLength] = useState<number>(0);
-
-  const { locale } = useParams();
-  const t = useTranslations("contact");
-
   return (
-    <section
-      dir={locale === "fa" ? "rtl" : "ltr"}
-      id="contact"
-      className="h-screen px-32 py-16"
-    >
-      <h3 className="text-4xl text-center font-bold">{t("title")}</h3>
-      <p className="text-center text-base-content/70 mt-4">{t("subTitle")}</p>
-      <div className="flex items-center justify-center mt-28">
+    <section id="contact" className="h-auto px-32 py-16">
+      <h3 className="text-4xl text-center font-bold">Contact me</h3>
+      <p className="text-center text-base-content/70 mt-4">
+        I'm always open to new opportunities and discussions.
+      </p>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-28">
         <div className="">
-          <div className="w-2xl flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <div className="w-full flex flex-row items-center gap-6">
               <input
                 type="text"
-                placeholder={t("namePlaceholder")}
+                placeholder="enter your name"
                 className="w-full border border-[#71717120] rounded-xl focus:border-primary outline-0 p-4"
               />
               <input
                 type="email"
-                placeholder={t("emailPlaceholder")}
+                placeholder="example@domain.com"
                 className="w-full border border-[#71717120] rounded-xl focus:border-primary outline-0 p-4"
               />
             </div>
             <input
-              type="email"
-              placeholder={t("subjectPlaceholder")}
+              type="subject"
+              placeholder="e.g. Get in touch, Questions, Feedback"
               className="border border-[#71717120] rounded-xl focus:border-primary outline-0 p-4"
             />
-            <span className="relative w-full">
-              <textarea
-                onChange={(e) => setTextLength(e.target.value.length)}
-                placeholder={t("messagePlaceholder")}
-                maxLength={300}
-                className="min-h-32 w-full border border-[#71717120] rounded-xl focus:border-primary outline-0 p-4"
-              />
-              <span
-                className={`text-sm text-base-content/80 absolute ${
-                  locale === "fa" ? "left-4" : "right-4"
-                } top-2`}
-              >
-                300/{textLength}
-              </span>
-            </span>
+            <textarea
+              placeholder="message"
+              className="min-h-32 w-full border border-[#71717120] rounded-xl focus:border-primary outline-0 p-4"
+            />
             <button type="submit" className="btn btn-primary btn-lg rounded-xl">
-              {t("submitBtn")}
+              Submit
             </button>
           </div>
         </div>
+        <div className=" h-32 bg-red-50"></div>
       </div>
     </section>
   );

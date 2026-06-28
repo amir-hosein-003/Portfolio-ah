@@ -1,49 +1,3 @@
-// export type Project = {
-//   id: number;
-//   title: string;
-//   frameWorks: string;
-//   img: string;
-// };
-
-// export const projects: Project[] = [
-//   {
-//     id: 1,
-//     title: "MrMohajerat",
-//     frameWorks: "Next.js | TypeScript | TailwindCss",
-//     img: "/globe.svg",
-//   },
-//   {
-//     id: 2,
-//     title: "Andishe Arta",
-//     frameWorks: "React.js | JavaScript | TailwindCss",
-//     img: "/globe.svg",
-//   },
-//   {
-//     id: 3,
-//     title: "Todo List",
-//     frameWorks: "Next.js | TypeScript | TailwindCss",
-//     img: "/globe.svg",
-//   },
-//   {
-//     id: 4,
-//     title: "Shoping Cart",
-//     frameWorks: "Html | Css | JavaScript",
-//     img: "/globe.svg",
-//   },
-//   {
-//     id: 5,
-//     title: "lorem ipsume",
-//     frameWorks: "Next.js | TypeScript | TailwindCss",
-//     img: "/globe.svg",
-//   },
-//   {
-//     id: 6,
-//     title: "lorem ipsume",
-//     frameWorks: "Next.js | TypeScript | TailwindCss",
-//     img: "/globe.svg",
-//   },
-// ];
-
 export interface ProjectInterface {
   title: string;
   description: string;
@@ -52,6 +6,8 @@ export interface ProjectInterface {
   company: string;
   year: number;
   stack: string;
+  visibility: string;
+  url?: string;
 }
 export const projects: ProjectInterface[] = [
   {
@@ -74,8 +30,10 @@ export const projects: ProjectInterface[] = [
       "Cloudinary",
     ],
     company: "Collaborative Team Project",
-    year: 2024,
+    year: 2025,
     stack: "Full-Stack",
+    visibility: "Public",
+    url: "https://github.com/AmirmAfzal/Etutor_Online_Learning",
   },
   {
     title: "Ai Language Learning Saas",
@@ -96,6 +54,7 @@ export const projects: ProjectInterface[] = [
     company: "Collaborative Team Project",
     year: 2025,
     stack: "Front-End",
+    visibility: "Private",
   },
   {
     title: "Online Service Platform",
@@ -118,6 +77,7 @@ export const projects: ProjectInterface[] = [
     company: "Personal Project",
     year: 2025,
     stack: "Full-Stack",
+    visibility: "Private",
   },
   {
     title: "RESTful Appointment Service with NestJS & MongoDB",
@@ -137,5 +97,7 @@ export const projects: ProjectInterface[] = [
     company: "Personal Project",
     year: 2025,
     stack: "Back-End",
+    visibility: "Public",
+    url: "https://github.com/amir-hosein-003/nest-appointments-api",
   },
 ];
